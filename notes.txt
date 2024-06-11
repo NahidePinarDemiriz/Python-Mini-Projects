@@ -1,0 +1,68 @@
+*** Requirements
+pip install cryptography
+
++++ Encrypt
+key + password + text to encrypt = random text
+random text + key + password = text to encrypt
+
++++ open() and with
+-Unlike open() where you have to close the file with the close() method,
+the with statement closes the file for you without you telling it to.
+-This is because the with statement calls 2 built-in methods behind the scene – __enter()__ and __exit()__.
+
+open() - Example
+
+my_file = open("hello.txt")
+print(my_file.read())
+my_file.close()
+
+
+with - Example
+
+with open("hello.txt") as my_file:
+    print(my_file.read())
+
++++ strip()
+Remove spaces at the beginning and at the end of the string:
+- Example
+
+txt = "     banana     "
+
+x = txt.strip()
+
+print("of all fruits", x, "is my favorite")
+
+Output:
+of all fruits banana is my favorite
+
++++ tell()
+Find the current file position:
+
+- Example
+f = open("demofile.txt", "r")
+print(f.tell())
+
++++ seek()
+-The seek() method sets the current file position in a file stream.
+-The seek() method also returns the new postion.
+
+- Example
+Change the current file position to 4, and return the rest of the line:
+f = open("demofile.txt", "r")
+f.seek(4)
+print(f.readline())
+
++++ rstrip()
+- rstrip() method removes any trailing whitespace characters, including spaces,
+tabs, and newline characters from the right end of a string.
+
+-Example
+
+txt = "banana,,,,,ssqqqww....."
+
+x = txt.rstrip(",.qsw")
+
+print(x)
+
+Output:
+banana
